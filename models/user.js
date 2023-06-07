@@ -12,6 +12,6 @@ const UserSchema = new Schema({
         required: true,
         unique: true,
         trim: true,
-    
-    }
+        match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    },
 })
