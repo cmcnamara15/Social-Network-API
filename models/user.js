@@ -14,4 +14,16 @@ const UserSchema = new Schema({
         trim: true,
         match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
     },
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: ''
+        }
+    ],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'user'
+        }
+    ]
 })
