@@ -1,7 +1,7 @@
 const { Thought, User } = require('../models');
 
 
-const getAllUsersThoughts = (req, res) => {
+const getAllThoughts = (req, res) => {
     Thought.find()
     .then(results => {
         res.json(results)
@@ -46,7 +46,7 @@ const deleteThought = (req, res) => {
 };
 
 module.exports = {
-    getAllUsersThoughts,
+    getAllThoughts,
     getThoughtById,
     createThought,
     updateThought,
