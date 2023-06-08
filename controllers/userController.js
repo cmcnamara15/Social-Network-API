@@ -16,7 +16,38 @@ const getUserById = (req, res) => {
     })
 }
 
+const createUser = (req, res) => {
+    User.create(req.body)
+    .then(results => {
+        res.json(results)
+    })
+}
+
+const updateUser = (req, res) => {
+    User.findOneAndUpdate({
+        _id: req.params.id
+    }, req.body, {
+        new: true,
+        runValidators: true
+    })
+    .then(results => {
+        res.json(results)
+    })
+}
+
+const deleteUser = (req, res) => {
+    User.findOneAndDelete({
+        _id: req.params.id
+    })
+    .then(results => {
+        res.json(results)
+    })
+}
+
 module.exports = {
     getAllUsers,
-    getUserById
+    getUserById,
+    createUser,
+    updateUser,
+    deleteUser
 }
