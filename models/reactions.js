@@ -27,6 +27,13 @@ const ReactionSchema = new Schema({
             return date.toLocaleDateString()
         }
     },
-})
+},
+{
+    toJSON: {
+        getters: true,
+    }
+});
+
+module.exports = ReactionSchema;
 
 
