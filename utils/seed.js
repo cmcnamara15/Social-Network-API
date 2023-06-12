@@ -3,10 +3,10 @@ const { User, Thought } = require('../models');
 
 
 const userData = [
-    {"username":"lernantino","email":"johnson200@gmail.com"},
+    {"username":"Chancho0","email":"johnson200@gmail.com"},
     {"username":"choncho1","email":"concho100@monson.com"},
-    {"username":"choncho2","email":"ripleybelieveit.net"},
-    {"username":"choncho3","email":"austinsubaru.org"},
+    {"username":"choncho2","email":"ripleybelieveit@cranklin.net"},
+    {"username":"choncho3","email":"tommybahamma@austinsubaru.org"},
     {"username":"choncho4","email":"perry-yip@gmail.com"},
     {"username":"choncho5","email":"fipfip@aol.com"},
     {"username":"Randlejackson","email":"pip-pip@hotmail.com"},
@@ -14,13 +14,13 @@ const userData = [
 ]
 
 const thoughtData = [
-    {"username":"lernantino","thoughtText":"I like to code","createdAt":"2021-08-09T18:25:43.511Z"},
+    {"username":"Chancho0","thoughtText":"I like to code!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho1","thoughtText":"I like to code more","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho2","thoughtText":"I love the sun!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho3","thoughtText":"I love the rain!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho4","thoughtText":"I love the snow!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho5","thoughtText":"I love the wind!","createdAt":"2021-08-09T18:25:43.511Z"},
-    {"username":"Randlejackson","thoughtText":"I love the cold!","createdAt":"2021-08-09T18:25:43.511Z"},
+    {"username":"randlejackson","thoughtText":"I love the cold!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"filipazzo2002","thoughtText":"I love the heat!","createdAt":"2021-08-09T18:25:43.511Z"},
 ]
 
