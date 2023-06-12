@@ -3,7 +3,6 @@ const { User, Thought } = require('../models');
 
 
 const userData = [
-    {"username":"Chancho0","email":"johnson200@gmail.com"},
     {"username":"choncho1","email":"concho100@monson.com"},
     {"username":"choncho2","email":"ripleybelieveit@cranklin.net"},
     {"username":"choncho3","email":"tommybahamma@austinsubaru.org"},
@@ -14,7 +13,6 @@ const userData = [
 ]
 
 const thoughtData = [
-    {"username":"Chancho0","thoughtText":"I like to code!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho1","thoughtText":"I like to code more","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho2","thoughtText":"I love the sun!","createdAt":"2021-08-09T18:25:43.511Z"},
     {"username":"choncho3","thoughtText":"I love the rain!","createdAt":"2021-08-09T18:25:43.511Z"},
