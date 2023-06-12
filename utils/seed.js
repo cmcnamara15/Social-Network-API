@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { User, Thought } = require('../models');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const userData = [
@@ -10,7 +11,7 @@ const userData = [
     {"username":"choncho5","email":"fipfip@aol.com"},
     {"username":"Randlejackson","email":"pip-pip@hotmail.com"},
     {"username":"filipazzo2002","email":"lorryjansen@gmail.com"},
-]
+];
 
 const thoughtData = [
     {"username":"choncho1","thoughtText":"I like to code more","createdAt":"2021-08-09T18:25:43.511Z"},
@@ -22,21 +23,27 @@ const thoughtData = [
     {"username":"filipazzo2002","thoughtText":"I love the heat!","createdAt":"2021-08-09T18:25:43.511Z"},
 ]
 
-const seedUsers = () => User.insertMany(userData);
 
+const seedUsers = () => User.insertMany(userData);
 const seedThoughts = () => Thought.insertMany(thoughtData);
 
 const seedAll = async () => {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+    try {
+        await User.deleteMany({}); // clear Users collection
+        await Thought.deleteMany({}); // clear Thoughts collection
 
-    await seedUsers();
-    await seedThoughts();
+        await seedUsers();
+        console.log('Users seeded');
 
-    console.log('all done!');
-    process.exit(0);
-}
+        await seedThoughts();
+        console.log('Thoughts seeded');
+
+        console.log('all done!');
+        process.exit(0); // this line is used to exit the process after seeding
+    } catch (error) {
+        console.error('Error seeding data: ', error);
+        process.exit(1); // exit with a "failure" code
+    }
+};
 
 seedAll();
