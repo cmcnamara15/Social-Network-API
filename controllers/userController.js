@@ -64,6 +64,10 @@ const deleteUser = (req, res) => {
         console.log(results);
         res.json(results)
     })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error deleting user' });
+    });
 }
 
 module.exports = {
