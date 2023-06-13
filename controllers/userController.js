@@ -33,6 +33,10 @@ const createUser = (req, res) => {
         console.log(results);
         res.json(results)
     })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error creating user' });
+    });
 }
 
 const updateUser = (req, res) => {
@@ -46,6 +50,10 @@ const updateUser = (req, res) => {
         console.log(results);
         res.json(results)
     })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error updating user' });
+    });
 }
 
 const deleteUser = (req, res) => {
