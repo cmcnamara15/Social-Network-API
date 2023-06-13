@@ -18,13 +18,19 @@ const getUserById = (req, res) => {
         _id: req.params.id
     })
     .then(results => {
+        console.log(results);
         res.json(results)
     })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error fetching user' });
+    });
 }
 
 const createUser = (req, res) => {
     User.create(req.body)
     .then(results => {
+        console.log(results);
         res.json(results)
     })
 }
@@ -37,6 +43,7 @@ const updateUser = (req, res) => {
         runValidators: true
     })
     .then(results => {
+        console.log(results);
         res.json(results)
     })
 }
@@ -46,6 +53,7 @@ const deleteUser = (req, res) => {
         _id: req.params.id
     })
     .then(results => {
+        console.log(results);
         res.json(results)
     })
 }
