@@ -3,9 +3,15 @@ const {User} = require('../models');
 const getAllUsers = (req, res) => {
     User.find()
     .then(results => {
-        res.json(results)
+        console.log(results);
+        res.json(results);
     })
-}
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error fetching users' });
+    });
+};
+
 
 const getUserById = (req, res) => {
     User.findOne({
