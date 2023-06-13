@@ -10,10 +10,12 @@ const {
 
 router.route('/').get(getAllUsers).post(createUser);
 
-// router.get('/:id', getUserById);
+
 router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
 // router.post('/', createUser);
+
+// router.get('/:id', getUserById);
 
 // router.put('/:id', updateUser);
 
