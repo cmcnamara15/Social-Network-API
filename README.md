@@ -14,7 +14,7 @@
 ![json](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
 ![edex](https://img.shields.io/badge/Edx-193A3E?style=for-the-badge&logo=edx&logoColor=white) -->
 
-This App is a exercise in using nosql & developing a solid foundational understanding in working with non relational databases
+This App is a exercise in using nosql & developing a solid foundational understanding in working with non relational databases.
 
 ## Table of Contents    
 - [Description](#description)
@@ -29,10 +29,10 @@ This App is a exercise in using nosql & developing a solid foundational understa
 
 
 ## Demo Video 
-[Demo Video]()<br />
+[Demo Video](https://drive.google.com/file/d/1rN0ivsp7v12gChP6MW0ZEAL8PLcb38xl/view)<br />
 
 ## REPO URL
-[Repository URL](https://github.com/cmcnamara15/Tech-Blog)<br />
+[Repository URL](https://github.com/cmcnamara15/Social-Network-API)<br />
 
 ## Installation
 <br />

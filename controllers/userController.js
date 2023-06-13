@@ -70,6 +70,8 @@ const deleteUser = (req, res) => {
     });
 }
 
+const
+
 module.exports = {
     getAllUsers,
     getUserById,
