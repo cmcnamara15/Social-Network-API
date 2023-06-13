@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { User, Thought } = require('../models');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/SocialNetworkAPI', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const userData = [
@@ -34,12 +35,14 @@ const seedAll = async () => {
 
         await seedUsers();
         console.log('Users seeded');
+        console.log(userData);
 
         await seedThoughts();
         console.log('Thoughts seeded');
 
         console.log('all done!');
-        process.exit(0); // this line is used to exit the process after seeding
+        console.log(thoughtData)
+        process.exit(0); // this line is used to exit the process after seeding 
     } catch (error) {
         console.error('Error seeding data: ', error);
         process.exit(1); // exit with a "failure" code
