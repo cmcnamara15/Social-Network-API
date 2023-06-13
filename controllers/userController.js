@@ -1,4 +1,5 @@
 const {User} = require('../models');
+const { use } = require('../routes');
 
 const getAllUsers = (req, res) => {
     User.find()
@@ -70,12 +71,45 @@ const deleteUser = (req, res) => {
     });
 }
 
-const
+const addFriend = (req, res) => {
+    user.findOneAndUpdate(
+        {_id: req.params.id},
+        {$push: {friends: req.params.friendId}},
+        {new: true}
+    )
+    .then(results => {
+        console.log(results);
+        res.json(results)
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error adding friend' });
+    });
+}
+
+const deleteFriend = (req, res) => {
+    user.findOneAndUpdate(
+        {_id: req.params.id},
+        {$pull: {friends: req.params.friendId}},
+        {new: true}
+    )
+    .then(results => {
+        console.log(results);
+        res.json(results)
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error deleting friend' });
+    });
+}
+
 
 module.exports = {
     getAllUsers,
     getUserById,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    addFriend,
+    deleteFriend
 }
