@@ -57,6 +57,10 @@ const addReaction = (req, res) => {
     .then(results => {
         res.json(results)
     })
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Error adding reaction' });
+    });
 };
 
 const deleteReaction = (req, res) => {
