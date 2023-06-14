@@ -45,11 +45,42 @@ const deleteThought = (req, res) => {
     })
 };
 
+const addReaction = (req, res) => {
+    Thought.findOneAndUpdate({
+        _id: req.params.id
+    }, {
+        $push: { reactions: req.body }
+    }, {
+        new: true,
+        runValidators: true
+    })
+    .then(results => {
+        res.json(results)
+    })
+};
+
+const deleteReaction = (req, res) => {
+    Thought.findOneAndUpdate({
+        _id: req.params.id
+    }, {
+        $pull: { reactions: { reactionId: req.params.reactionId } }
+    }, {
+        new: true,
+        runValidators: true
+    })
+    .then(results => {
+        res.json(results)
+    })
+};
+
+
 module.exports = {
     getAllThoughts,
     getThoughtById,
     createThought,
     updateThought,
-    deleteThought
+    deleteThought,
+    addReaction,
+    deleteReaction
 }
 
