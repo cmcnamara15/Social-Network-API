@@ -72,7 +72,7 @@ const deleteUser = (req, res) => {
 }
 
 const addFriend = (req, res) => {
-    user.findOneAndUpdate(
+    User.findOneAndUpdate(
         {_id: req.params.id},
         {$push: {friends: req.params.friendId}},
         {new: true}
@@ -88,7 +88,7 @@ const addFriend = (req, res) => {
 }
 
 const deleteFriend = (req, res) => {
-    user.findOneAndUpdate(
+    User.findOneAndUpdate(
         {_id: req.params.id},
         {$pull: {friends: req.params.friendId}},
         {new: true}
