@@ -57,4 +57,6 @@ Email: cmcnamara1991@icloud.com
 
 ## Screenshots
 
-The following screenshots shows the apps functionality.<br />
+This project was a exercise in backend development. Demonstration of functionality can be seen in the demo video above<br />
+
+![Screenshot of application running via insomnia](./assets/images/insomnia.png)
